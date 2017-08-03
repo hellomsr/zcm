@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>招财猫详情页</title>
+		
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/detail.css"/>
+	</head>
+	<body>
+		
+		
+		<script type="text/javascript">
+			var ck=document.documentElement.clientWidth /750*100;
+			document.querySelector('html').style.fontSize=ck+'px';
+			//这段JS 决定了下边内容在各个窗口显示的完整性 ，如果做手机端，一定要加上这段代码
+		</script>
+		
+		
+		<header>
+			<a href="index.html"><i class="iconfont icon-fanhui"></i></a>
+			<span>盈信计划2467号1期</span>
+			<i class="iconfont icon-caidan" id="menu"></i>
+		</header>
+		
+		<section class="data">
+			<p class="data1"><strong>9.2%+0.5%</strong></p>
+			<p class="data2">9.7%(9.2%+活动加息0.5%)</p>
+		</section>
+		
+		
+		<section class="support">
+			<div class="keys">
+				<span>1000起投</span>
+				<span>期限180天</span>
+			</div>
+			<div>
+				<ul>
+					<li><i class="iconfont icon-renzheng"></i>省级律所法律支持</li>
+					<li><i class="iconfont icon-iconset0204"></i>浙大友创战略入股</li>
+					<li><i class="iconfont icon-lock-fill"></i>招财猫易贷严控风</li>
+					<li><i class="iconfont icon-vip1"></i>千万级风险保障金</li>
+				</ul>
+			</div>
+		</section>
+		
+		<section class="proccess">
+			<div class="pro-wrap" data-proccess="37">
+				<div class="pro-front"></div>
+				<div class="pro-block">0%</div>
+			</div>
+			<p class="pro-info">
+				<span>已投资<em>37</em>人>></span>
+				<span>剩余可投<em>623000</em>元	</span>
+			</p>
+		</section>
+		
+		<section class="footerlink">
+			<p><a href="">查看项目详情</a></p>
+		</section>
+		
+		<footer>
+			<a class="earnings" href="">收益估算</a>
+			<a class="investment" href="">立即投资</a>
+		</footer>
+		
+		<div id='mask'>
+			<div class="nav">
+				<a href="">
+					<i class="iconfont icon-zhuye"></i>
+					<span>主页</span>
+				</a>
+				<a href="">
+					<i class="iconfont icon-suo"></i>
+					<span>安全保障</span>
+				</a>
+				<a href="">
+					<i class="iconfont icon-touzi"></i>
+					<span>我要投资</span>
+				</a>
+				<a href="">
+					<i class="iconfont icon-jiaruwomen"></i>
+					<span>账户中心</span>
+				</a>
+			</div>
+		</div>
+		
+		<script src="js/zepto/zepto.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/zepto/event.js" type="text/javascript"></script>
+		<script src="js/zepto/touch.js" type="text/javascript"></script>	
+		
+		<script type="text/javascript">
+			window.requestAnimFrame = (function(){
+				  return  window.requestAnimationFrame       ||
+				          window.webkitRequestAnimationFrame ||
+				          window.mozRequestAnimationFrame    ||
+				          function( callback ){
+				            window.setTimeout(callback, 1000 / 60);
+				          };
+			})();
+			
+			window.cancelrequestAnimFrame = (function(){
+				  return  window.cancelAnimationFrame   ||
+				          window.webkitCancelAnimationFrame ||
+				          window.mozCancelAnimationFrame    ||
+				          window.clearTimeout;
+				          
+			})();
+			$(function(){
+				
+			
+			//假设当前的进度条值是50
+			var value=$('.pro-wrap').attr('data-proccess');
+			
+			var currentValue=0;
+			var step=value/0;
+			var timerId;
+			
+			//红色的前景的宽度 从0--整个宽度的一半  cs3动画
+			var totalWidth=$('.pro-wrap').width();
+			var frontWidth=totalWidth*value/100;
+			$('.pro-front').css('width',frontWidth);
+			
+			//left从0到红色的前景的宽度-自己宽度的/2(2分之1)  css3动画
+			$('.pro-block').css('left',frontWidth-$('.pro-block').width()/2);
+			
+			//数字从0不断增加到value
+			function addNumber(){
+				//currentV
+				console.info('addNumber');//1s  60次
+				currentValue=currentValue+step;
+				
+				currentValue=currentValue.toFixed(2);  //保留两位小数
+				//Math.max()
+				currentValue=currentValue>value?value:currentValue;
+				
+				$('.pro-block').html(currentValue+'%');
+				
+				timerId=requestAnimFrame(function(){
+					addNumber();
+				});
+				if(currentValue>=value){
+					cancelrequestAnimFrame(timerId);
+				}
+			}
+			addNumber();
+		});
+		
+		
+		$(function(){
+			$('#menu').on('tap',function(){
+				console.info('tap');
+				$('#mask').toggle();
+			})
+		});
+			
+			
+			
+		</script>
+	
+	</body>
+</html>
