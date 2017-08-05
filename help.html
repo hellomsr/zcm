@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>帮助中心</title>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/help.css"/>
+		
+		<script type="text/javascript">
+			var ck=document.documentElement.clientWidth /750*100;
+			document.querySelector('html').style.fontSize=ck+'px';
+			//这段JS 决定了下边内容在各个窗口显示的完整性 ，如果做手机端，一定要加上这段代码
+		</script>
+	</head>
+	<body>
+		<header>
+			<a href="index.html"><i class="iconfont icon-fanhui"></i></a>
+			<span>帮助中心</span>
+			<i class="iconfont icon-caidan" id="menu"></i>
+			
+
+		</header>
+		
+		<section class="listwrap">
+			<ul>
+				<li class="item">
+					<i class="iconfont icon-buoumaotubiao45"></i>
+					<span class="title">了解招财猫</span>
+					<span class="iconfont icon-caidan"></span>
+				</li>
+				<li class="item">
+					<i class="iconfont icon-buoumaotubiao45"></i>
+					<span class="title">了解招财猫</span>
+					<span class="iconfont icon-caidan"></span>
+				</li>
+				<li class="item">
+					<i class="iconfont icon-buoumaotubiao45"></i>
+					<span class="title">了解招财猫</span>
+					<span class="iconfont icon-caidan"></span>
+				</li>
+				<li class="item">
+					<i class="iconfont icon-buoumaotubiao45"></i>
+					<span class="title">了解招财猫</span>
+					<span class="iconfont icon-caidan"></span>
+				</li>
+				<li class="item">
+					<i class="iconfont icon-buoumaotubiao45"></i>
+					<span class="title">了解招财猫</span>
+					<span class="iconfont icon-caidan"></span>
+				</li>
+				<li class="item">
+					<i class="iconfont icon-buoumaotubiao45"></i>
+					<span class="title">了解招财猫</span>
+					<span class="iconfont icon-caidan"></span>
+				</li>
+				<li class="item">
+					<i class="iconfont icon-buoumaotubiao45"></i>
+					<span class="title">了解招财猫</span>
+					<span class="iconfont icon-caidan"></span>
+				</li>
+				<li class="item">
+					<i class="iconfont icon-buoumaotubiao45"></i>
+					<span class="title">了解招财猫</span>
+					<span class="iconfont icon-caidan"></span>
+				</li>
+				<li class="item">
+					<i class="iconfont icon-buoumaotubiao45"></i>
+					<span class="title">了解招财猫</span>
+					<span class="iconfont icon-caidan"></span>
+				</li>
+			</ul>
+		</section>
+		
+		
+		<section class="concat">
+			<div class="concat-body">
+				<i class="iconfont icon-dianhua"></i>
+				
+				<ul>
+					<li>拨打客服热线：<em>400-991-7005</em></li>
+					<li>周一至周五 周一至周五 周一至周五 周一至周五</li>
+				</ul>
+			</div>
+		</section>
+		
+		
+<!-----------------------------用户导航-------------------------->
+	<div id='mask'>
+		<div class="nav">
+			<a href="index.html">
+				<i class="iconfont icon-zhuye"></i>
+				<span>主页</span>
+			</a>
+			<a href="">
+				<i class="iconfont icon-suo"></i>
+				<span>安全保障</span>
+			</a>
+			<a href="">
+				<i class="iconfont icon-touzi"></i>
+				<span>我要投资</span>
+			</a>
+			<a href="">
+				<i class="iconfont icon-jiaruwomen"></i>
+				<span>账户中心</span>
+			</a>
+		</div>
+	</div>
+<!-----------------------------版权申明-------------------------->
+	
+	<footer>
+		<p class="links">
+			<a href="">触屏版</a> | 
+			<a href="">电脑版</a> | 
+			<a href="">APP下载</a> | 
+		</p>
+		<p class="copyright"> &copy;2017招财猫理财 浙IPC备1404444号</p>
+	</footer>
+	
+	<script src="js/zepto/zepto.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/zepto/event.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/zepto/touch.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+				$("#menu").on("tap",function(){
+					console.info("tap");
+					$("#mask").toggle();
+				})
+			})	
+	</script>
+	</body>
+</html>
